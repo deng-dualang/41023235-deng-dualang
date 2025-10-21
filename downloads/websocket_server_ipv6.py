@@ -6,7 +6,7 @@ import json
 # 儲存所有連線的客戶端
 connected_clients = set()
 
-async def handle_connection(websocket, path=None):  # Make path optional
+async def handle_connection(websocket, path=None):  # path is optional
     print("客戶端已連線")
     connected_clients.add(websocket)
     try:
@@ -23,8 +23,8 @@ async def handle_connection(websocket, path=None):  # Make path optional
         connected_clients.remove(websocket)
 
 async def main():
-    server = await websockets.serve(handle_connection, "0.0.0.0", 8765)
-    print("WebSocket 伺服器運行於 ws://0.0.0.0:8765")
+    server = await websockets.serve(handle_connection, "::", 8765)  # Bind to IPv6 wildcard
+    print("WebSocket 伺服器運行於 ws://[::]:8765")
     await server.wait_closed()
 
 if __name__ == "__main__":
