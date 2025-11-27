@@ -1,0 +1,62 @@
+# 畫寮國國旗（可旋轉）
+from browser import document as doc
+from browser import html
+import math
+
+canvas = html.CANVAS(width = 600, height = 400)
+canvas.id = "laos_flag_rot"
+doc["brython_div1"] <= canvas
+
+ctx = canvas.getContext("2d")
+
+flag_w = 300     # 國旗寬度（自己可改）
+flag_h = 200     # 國旗高度（自己可改）
+
+# 寮國國旗比例：紅 : 藍 : 紅 = 1 : 2 : 1
+stripe_h = flag_h / 4
+blue_h = flag_h / 2
+
+# ========= 先做成一個函式：畫寮國國旗 =========
+def draw_laos_flag(x, y):
+    # 上紅
+    ctx.fillStyle = 'rgb(206, 17, 38)'
+    ctx.fillRect(x, y, flag_w, stripe_h)
+
+    # 中藍
+    ctx.fillStyle = 'rgb(0, 40, 104)'
+    ctx.fillRect(x, y + stripe_h, flag_w, blue_h)
+
+    # 下紅
+    ctx.fillStyle = 'rgb(206, 17, 38)'
+    ctx.fillRect(x, y + stripe_h + blue_h, flag_w, stripe_h)
+
+    # 白色圓形
+    cx = x + flag_w / 2
+    cy = y + flag_h / 2
+    r = blue_h * 0.4
+
+    ctx.beginPath()
+    ctx.arc(cx, cy, r, 0, math.pi * 2)
+    ctx.fillStyle = "white"
+    ctx.fill()
+
+# ========= 旋轉版的繪製 =========
+def draw_laos_flag_rotated(deg, posx, posy):
+    rad = math.radians(deg)
+
+    ctx.save()
+    # 移動到國旗中心
+    ctx.translate(posx + flag_w/2, posy + flag_h/2)
+    # 旋轉
+    ctx.rotate(rad)
+    # 回到左上角為基準
+    ctx.translate(-flag_w/2, -flag_h/2)
+
+    draw_laos_flag(0, 0)
+    ctx.restore()
+
+# ========= 在畫布中央旋轉 45 度 =========
+start_x = (canvas.width - flag_w) / 2
+start_y = (canvas.height - flag_h) / 2
+
+draw_laos_flag_rotated(45, start_x, start_y)
