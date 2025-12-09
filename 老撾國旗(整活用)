@@ -1,0 +1,43 @@
+# 畫寮國國旗
+from browser import document as doc
+from browser import html
+import math
+
+canvas = html.CANVAS(width = 600, height = 400)
+canvas.id = "laos_flag"
+doc["brython_div1"] <= canvas
+
+ctx = canvas.getContext("2d")
+
+flag_w = canvas.width
+flag_h = canvas.height
+
+# 寮國國旗比例：紅 : 藍 : 紅 = 1 : 2 : 1
+# 每一條的高度
+stripe_h = flag_h / 4  # 紅 = 1/4
+blue_h = flag_h / 2    # 藍 = 2/4
+
+# ------- 畫三條橫色 -------
+# 上紅
+ctx.fillStyle = 'rgb(206, 17, 38)'      # 寮國官方紅色
+ctx.fillRect(0, 0, flag_w, stripe_h)
+
+# 中藍（主色）
+ctx.fillStyle = 'rgb(0, 40, 104)'       # 寮國官方藍色
+ctx.fillRect(0, stripe_h, flag_w, blue_h)
+
+# 下紅
+ctx.fillStyle = 'rgb(206, 17, 38)'
+ctx.fillRect(0, stripe_h + blue_h, flag_w, stripe_h)
+
+# ------- 白色圓形 -------
+center_x = flag_w / 2
+center_y = flag_h / 2
+# 白色圓形直徑 = 藍色橫條高度的 80%
+circle_r = blue_h * 0.4
+
+ctx.beginPath()
+ctx.arc(center_x, center_y, circle_r, 0, math.pi*2)
+ctx.fillStyle = 'white'
+ctx.fill()
+ctx.closePath()
