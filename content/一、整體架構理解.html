@@ -2,7 +2,7 @@
         <head>
         <title>cp_demo</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,13 +142,19 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='Python.html'>Next</a> >> Python<br /><h1>Project</h1>
-<p>既存技術:</p>
-<p style="padding-left: 30px;"><a href="https://github.com/scrum-1/respysive-slide">https://github.com/scrum-1/respysive-slide</a></p>
-<p>專案簡介：非同步分散式 Reveal.js 協同簡報編輯系統</p>
-<p>各學員利用 <a href="https://github.com/fbxyz/respysive-slide">https://github.com/fbxyz/respysive-slide</a> 模組，以位於 downloads 目錄的 <a href="./../downloads/reveal_file.py">reveal_file.py</a> 建立簡報。(<a href="https://mde.tw/cp_demo/reveal/index.html">簡報結果</a>)</p>
-<p>各學員進行協同倉儲內容編輯時，可以先將版本推送至個人倉儲分支，待階段性內容完成後，再設法與主分支或其他測試用分支進行合併。若合併之版本內容有衝突(同位置的新舊版本內容取捨)，則必須設法解決衝突內容後，再進行後續的新增、提交與推送。</p>
-<br />About << <a href='About.html'>Previous</a> <a href='Python.html'>Next</a> >> Python</div>
+    <div id="tipue_search_content">前言 << <a href='前言.html'>Previous</a> <a href='二、資料夾結構的角色分工.html'>Next</a> >> 二、資料夾結構的角色分工<br /><h1>一、整體架構理解</h1>
+<p>本專案屬於典型的 Web 應用程式，採用前後端分離但同一專案管理的方式：</p>
+<ul>
+<li>
+<p><strong>後端（Flask）</strong>：負責處理 HTTP 請求、路由控制、資料庫操作，以及將頁面回傳給瀏覽器。</p>
+</li>
+<li>
+<p><strong>前端（HTML + Brython）</strong>：由 Flask 的模板系統載入 HTML，再透過 Brython 讓 Python 程式碼在瀏覽器中執行，負責畫面互動與邏輯呈現。</p>
+</li>
+</ul>
+<p>這樣的架構讓我第一次體會到「Python 不只是在寫後端，也能進到瀏覽器端執行」。</p>
+<hr/>
+<br />前言 << <a href='前言.html'>Previous</a> <a href='二、資料夾結構的角色分工.html'>Next</a> >> 二、資料夾結構的角色分工</div>
         
     <!-- footer -->
       <div class="container">

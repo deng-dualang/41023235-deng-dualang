@@ -2,7 +2,7 @@
         <head>
         <title>cp_demo</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,13 +142,37 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='Python.html'>Next</a> >> Python<br /><h1>Project</h1>
-<p>既存技術:</p>
-<p style="padding-left: 30px;"><a href="https://github.com/scrum-1/respysive-slide">https://github.com/scrum-1/respysive-slide</a></p>
-<p>專案簡介：非同步分散式 Reveal.js 協同簡報編輯系統</p>
-<p>各學員利用 <a href="https://github.com/fbxyz/respysive-slide">https://github.com/fbxyz/respysive-slide</a> 模組，以位於 downloads 目錄的 <a href="./../downloads/reveal_file.py">reveal_file.py</a> 建立簡報。(<a href="https://mde.tw/cp_demo/reveal/index.html">簡報結果</a>)</p>
-<p>各學員進行協同倉儲內容編輯時，可以先將版本推送至個人倉儲分支，待階段性內容完成後，再設法與主分支或其他測試用分支進行合併。若合併之版本內容有衝突(同位置的新舊版本內容取捨)，則必須設法解決衝突內容後，再進行後續的新增、提交與推送。</p>
-<br />About << <a href='About.html'>Previous</a> <a href='Python.html'>Next</a> >> Python</div>
+    <div id="tipue_search_content">三、啟動流程的實際體會 << <a href='三、啟動流程的實際體會.html'>Previous</a> <a href='五、學習心得與反思.html'>Next</a> >> 五、學習心得與反思<br /><h1>四、除錯過程帶來的學習</h1>
+<p>在實作中，我遇到多次錯誤，例如：</p>
+<ul>
+<li>
+<p>找不到 <code inline="">app.py</code></p>
+</li>
+<li>
+<p>Clone 到錯誤的資料夾（<code inline="">1、2、3</code>）</p>
+</li>
+<li>
+<p>瀏覽器一直 loading</p>
+</li>
+</ul>
+<p>這些錯誤讓我學會用「系統化的方式排查」：</p>
+<ul>
+<li>
+<p>先確認<strong>目前所在目錄</strong></p>
+</li>
+<li>
+<p>再確認<strong>檔案是否存在</strong></p>
+</li>
+<li>
+<p>接著檢查 Flask 是否有收到請求（cmd 是否出現 <code inline="">GET /</code>）</p>
+</li>
+<li>
+<p>最後才檢查程式邏輯本身</p>
+</li>
+</ul>
+<p>這種思考方式比單純「重裝或亂試指令」有效得多。</p>
+<hr/>
+<br />三、啟動流程的實際體會 << <a href='三、啟動流程的實際體會.html'>Previous</a> <a href='五、學習心得與反思.html'>Next</a> >> 五、學習心得與反思</div>
         
     <!-- footer -->
       <div class="container">

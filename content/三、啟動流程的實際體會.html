@@ -2,7 +2,7 @@
         <head>
         <title>cp_demo</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,13 +142,36 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='Python.html'>Next</a> >> Python<br /><h1>Project</h1>
-<p>既存技術:</p>
-<p style="padding-left: 30px;"><a href="https://github.com/scrum-1/respysive-slide">https://github.com/scrum-1/respysive-slide</a></p>
-<p>專案簡介：非同步分散式 Reveal.js 協同簡報編輯系統</p>
-<p>各學員利用 <a href="https://github.com/fbxyz/respysive-slide">https://github.com/fbxyz/respysive-slide</a> 模組，以位於 downloads 目錄的 <a href="./../downloads/reveal_file.py">reveal_file.py</a> 建立簡報。(<a href="https://mde.tw/cp_demo/reveal/index.html">簡報結果</a>)</p>
-<p>各學員進行協同倉儲內容編輯時，可以先將版本推送至個人倉儲分支，待階段性內容完成後，再設法與主分支或其他測試用分支進行合併。若合併之版本內容有衝突(同位置的新舊版本內容取捨)，則必須設法解決衝突內容後，再進行後續的新增、提交與推送。</p>
-<br />About << <a href='About.html'>Previous</a> <a href='Python.html'>Next</a> >> Python</div>
+    <div id="tipue_search_content">二、資料夾結構的角色分工 << <a href='二、資料夾結構的角色分工.html'>Previous</a> <a href='四、除錯過程帶來的學習.html'>Next</a> >> 四、除錯過程帶來的學習<br /><h1>三、啟動流程的實際體會</h1>
+<p>整個系統的操作流程可以整理為以下步驟：</p>
+<ol>
+<li>
+<p><strong>進入正確的專案資料夾</strong>（確保裡面有 <code inline="">app.py</code>）。</p>
+</li>
+<li>
+<p>在命令列執行 <code inline="">python app.py</code>。</p>
+</li>
+<li>
+<p>Flask 啟動後，在本機開啟一個開發伺服器（<code inline="">127.0.0.1:5000</code>）。</p>
+</li>
+<li>
+<p>使用瀏覽器連線到該網址，取得由 Flask 回傳的 HTML 頁面。</p>
+</li>
+<li>
+<p>HTML 載入後，Brython 在瀏覽器中執行 Python 程式，完成互動功能。</p>
+</li>
+</ol>
+<p>過程中我也學到：</p>
+<ul>
+<li>
+<p>命令列顯示「Running on <a href="http://127.0.0.1:5000%E3%80%8D%E4%BB%A3%E8%A1%A8**%E6%88%90%E5%8A%9F%E5%95%9F%E5%8B%95%EF%BC%8C%E4%B8%8D%E6%98%AF%E9%8C%AF%E8%AA%A4**%E3%80%82">http://127.0.0.1:5000」代表**成功啟動，不是錯誤**。</a></p>
+</li>
+<li>
+<p>網頁一直 loading，通常不是瀏覽器問題，而是後端路由或前端資源卡住。</p>
+</li>
+</ul>
+<hr/>
+<br />二、資料夾結構的角色分工 << <a href='二、資料夾結構的角色分工.html'>Previous</a> <a href='四、除錯過程帶來的學習.html'>Next</a> >> 四、除錯過程帶來的學習</div>
         
     <!-- footer -->
       <div class="container">

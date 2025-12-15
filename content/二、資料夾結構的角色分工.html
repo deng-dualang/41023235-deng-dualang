@@ -2,7 +2,7 @@
         <head>
         <title>cp_demo</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -142,13 +142,28 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='Python.html'>Next</a> >> Python<br /><h1>Project</h1>
-<p>既存技術:</p>
-<p style="padding-left: 30px;"><a href="https://github.com/scrum-1/respysive-slide">https://github.com/scrum-1/respysive-slide</a></p>
-<p>專案簡介：非同步分散式 Reveal.js 協同簡報編輯系統</p>
-<p>各學員利用 <a href="https://github.com/fbxyz/respysive-slide">https://github.com/fbxyz/respysive-slide</a> 模組，以位於 downloads 目錄的 <a href="./../downloads/reveal_file.py">reveal_file.py</a> 建立簡報。(<a href="https://mde.tw/cp_demo/reveal/index.html">簡報結果</a>)</p>
-<p>各學員進行協同倉儲內容編輯時，可以先將版本推送至個人倉儲分支，待階段性內容完成後，再設法與主分支或其他測試用分支進行合併。若合併之版本內容有衝突(同位置的新舊版本內容取捨)，則必須設法解決衝突內容後，再進行後續的新增、提交與推送。</p>
-<br />About << <a href='About.html'>Previous</a> <a href='Python.html'>Next</a> >> Python</div>
+    <div id="tipue_search_content">一、整體架構理解 << <a href='一、整體架構理解.html'>Previous</a> <a href='三、啟動流程的實際體會.html'>Next</a> >> 三、啟動流程的實際體會<br /><h1>二、資料夾結構的角色分工</h1>
+<p>在專案目錄中，可以清楚看到 Flask 專案的標準結構：</p>
+<ul>
+<li>
+<p><strong>app.py</strong>：整個系統的入口。負責建立 Flask 應用、定義路由（例如 <code inline="">/</code>）、啟動伺服器。</p>
+</li>
+<li>
+<p><strong>templates/</strong>：存放 HTML 樣板。Flask 透過 <code inline="">render_template()</code> 將這些頁面回傳給使用者。</p>
+</li>
+<li>
+<p><strong>static/</strong>：存放前端靜態資源，例如 JavaScript、Brython 程式、CSS、圖片等。</p>
+</li>
+<li>
+<p><strong>robot.sqlite</strong>：資料庫檔案，用來保存系統運作時所需的資料。</p>
+</li>
+<li>
+<p><strong>其他 .py 檔案</strong>：輔助功能模組，例如資料建立、資料處理或舊版本備份。</p>
+</li>
+</ul>
+<p>透過實際用 <code inline="">dir</code> 指令查看資料夾，我才真正理解「為什麼一定要在有 <code inline="">app.py</code> 的資料夾執行 <code inline="">python app.py</code>」。</p>
+<hr/>
+<br />一、整體架構理解 << <a href='一、整體架構理解.html'>Previous</a> <a href='三、啟動流程的實際體會.html'>Next</a> >> 三、啟動流程的實際體會</div>
         
     <!-- footer -->
       <div class="container">
