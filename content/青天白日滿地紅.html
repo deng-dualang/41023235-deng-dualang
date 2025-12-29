@@ -142,21 +142,22 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Python << <a href='Python.html'>Previous</a> <a href='w5_1.html'>Next</a> >> w5_1<br /><h1>Examples</h1>
-<script src="./../cmsimde/static/brython.js"></script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
-<!-- 啟動 Brython -->
-<p>
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
-}
-</script>
-</p>
-<div id="brython_div1"></div>
-<p>w5: <span>深入理解</span><a href="https://mde.tw/cp2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/fa7d2a68d1569596f62e5b7739a83119/raw/e2502768ea4e0d13b33da0976b656a337e51ad42/cp_w4_robot_animation.py">機器人行走模擬程式</a><span>中的所有 Python 與 Brython 程式用法。</span></p>
-<p><span style="background-color: #ffff00;">目前頁面已經有一個 div 標註, 其 id 設為 brython_div1, 請多舉幾個 brython browser 模組的 document, html, timer 以及 bind 的範例, 各舉十個範例, 讓我可以交作業.</span></p>
-<br />Python << <a href='Python.html'>Previous</a> <a href='w5_1.html'>Next</a> >> w5_1</div>
+    <div id="tipue_search_content">繞學號末三碼 << <a href='繞學號末三碼.html'>Previous</a> <a href='0~9.html'>Next</a> >> 0~9<br /><h1>青天白日滿地紅</h1>
+<h4>45度及90度的青天白日滿地紅</h4>
+<p>41023235所作:</p>
+<p>from browser import document as doc, html<br/>import math</p>
+<p>canvas = html.CANVAS(width=600, height=400)<br/>canvas.id = "twflag_rot"<br/>doc["brython_div1"] &lt;= canvas</p>
+<p>ctx = canvas.getContext("2d")</p>
+<p>flag_w = 250<br/>flag_h = 166<br/>gap = 20 # 國旗間距</p>
+<p>def draw_flag(x, y):<br/> # 紅地<br/> ctx.fillStyle = 'rgb(255,0,0)'<br/> ctx.fillRect(x, y, flag_w, flag_h)<br/> # 青天<br/> ctx.fillStyle = 'rgb(0,0,150)'<br/> ctx.fillRect(x, y, flag_w/2, flag_h/2)<br/> # 白日位置<br/> cx = x + flag_w/4<br/> cy = y + flag_h/4</p>
+<p># 12道光芒<br/> ctx.beginPath()<br/> star_r = flag_w/8<br/> angle = 0<br/> for i in range(24):<br/> angle += 5 * math.pi * 2 / 12<br/> px = cx + math.cos(angle) * star_r<br/> py = cy + math.sin(angle) * star_r<br/> if i == 0:<br/> ctx.moveTo(px, py)<br/> else:<br/> ctx.lineTo(px, py)<br/> ctx.closePath()<br/> ctx.fillStyle = '#fff'<br/> ctx.fill()</p>
+<p># 藍圈<br/> ctx.beginPath()<br/> ctx.arc(cx, cy, flag_w * 17 / 240, 0, math.pi*2)<br/> ctx.fillStyle = 'rgb(0,0,149)'<br/> ctx.fill()</p>
+<p># 白心<br/> ctx.beginPath()<br/> ctx.arc(cx, cy, flag_w/16, 0, math.pi*2)<br/> ctx.fillStyle = '#fff'<br/> ctx.fill()</p>
+<p>def draw_flag_rotate(deg, posx, posy):<br/> rad = math.radians(deg)<br/> ctx.save()<br/> ctx.translate(posx + flag_w/2, posy + flag_h/2)<br/> ctx.rotate(rad)<br/> ctx.translate(-flag_w/2, -flag_h/2)<br/> draw_flag(0, 0)<br/> ctx.restore()</p>
+<p># 計算總寬度，讓國旗並排在畫布中間<br/>total_w = flag_w*2 + gap<br/>start_x = (canvas.width - total_w)/2<br/>start_y = (canvas.height - flag_h)/2</p>
+<p># 左側畫 45 度<br/>draw_flag_rotate(-45, start_x, start_y)</p>
+<p># 右側畫 90 度<br/>draw_flag_rotate(-90, start_x + flag_w + gap, start_y)</p>
+<br />繞學號末三碼 << <a href='繞學號末三碼.html'>Previous</a> <a href='0~9.html'>Next</a> >> 0~9</div>
         
     <!-- footer -->
       <div class="container">
